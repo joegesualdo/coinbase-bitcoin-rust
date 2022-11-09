@@ -1,4 +1,4 @@
-use crate::currencies::{Currency, CryptoCurrency, FiatCurrency};
+use crate::currencies::{CryptoCurrency, Currency, FiatCurrency};
 use CryptoCurrency::*;
 use FiatCurrency::*;
 
@@ -12,7 +12,7 @@ pub const API_BASE_URL: &str = "https://api.coinbase.com";
 
 fn get_api_version_string(version: APIVersion) -> String {
     match version {
-        APIVersion::V2 => String::from("v2")
+        APIVersion::V2 => String::from("v2"),
     }
 }
 
@@ -20,10 +20,9 @@ pub fn get_currency_string_for_url(currency: Currency) -> URLString {
     match currency {
         Currency::FiatCurrency(USD) => String::from("USD"),
         Currency::CryptoCurrency(USDT) => String::from("USDT"),
-        Currency::CryptoCurrency(BTC) => String::from("BTC")
+        Currency::CryptoCurrency(BTC) => String::from("BTC"),
     }
 }
-
 
 pub fn get_spot_price_url(currency: Currency) -> URLString {
     return format!(
@@ -54,5 +53,3 @@ pub fn get_sell_price_url(currency: Currency) -> String {
         get_currency_string_for_url(currency)
     );
 }
-
-

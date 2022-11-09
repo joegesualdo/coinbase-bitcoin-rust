@@ -19,7 +19,7 @@ pub enum Currency {
     CryptoCurrency(CryptoCurrency)
 }
 
-fn get_data_for_fiat_currency(currency: Currency) -> CurrencyData {
+fn get_data_for_currency(currency: Currency) -> CurrencyData {
     match currency {
         Currency::FiatCurrency(FiatCurrency::USD) => CurrencyData {
             code: String::from("USD"),
