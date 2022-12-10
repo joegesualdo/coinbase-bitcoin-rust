@@ -4,7 +4,6 @@ use reqwest::blocking::Response;
 use serde::de::DeserializeOwned;
 
 // Explains the DeserializeOwned: https://serde.rs/lifetimes.html
-
 pub fn request<T>(url: String) -> Result<T>
 where
     T: DeserializeOwned,
